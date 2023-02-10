@@ -1,0 +1,43 @@
+{{-- <form action="{{ route('delete-category',$item->id) }}" method="POST" enctype="multipart/form-data">
+    {{ method_field('delete') }}
+    {{ crf_field() }} --}}
+<div class="modal fade" id="ModalDelete"  tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog   modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h1 class="modal-title fs-5 w-100" id="staticBackdropLabel">{{ __('User Delete') }}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span aria-label="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+        Yakin Ingin Menghapus Data <b>{{ $item->id }}</b>?
+         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('Cancel') }}</button>
+          <a href="{{ url('delete-category', $item->id) }}" type="button" class="btn btn-danger">delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{{-- </form> --}}
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Yakin Ingin Menghapus Data <b>{{ $item->id }}</b>?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
