@@ -1,4 +1,5 @@
 /* Variriables */
+@charset "UTF-8";
 :root{
 	--khaki: #F0E68C;
 	--khakiDark: #BDB76B;
@@ -1035,4 +1036,247 @@ main .account-page .account-detail table td{
 	padding: 8px;
 	text-align: center;
 	border: 1px solid #eee;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500");
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  height: 24px;
+  padding: 32px 0 8px;
+}
+header > img {
+  height: 100%;
+}
+
+.wrapper {
+  padding: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 210px);
+  grid-row-gap: 0px;
+  grid-column-gap: 4px;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.clip, .playlist {
+  height: 219px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.clip section.preview-container, .playlist section.preview-container {
+  width: 100%;
+  height: 117px;
+  position: relative;
+}
+.clip section.preview-container img, .playlist section.preview-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.clip .overlay-preview, .playlist .overlay-preview {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.clip .play-icon, .playlist .play-icon {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.clip .play-icon svg, .playlist .play-icon svg {
+  fill: #ffffff;
+}
+.clip.show-play-icon .play-icon, .playlist.show-play-icon .play-icon {
+  opacity: 0.8;
+}
+.clip:hover .watch-later-button, .clip:hover .more-button, .playlist:hover .watch-later-button, .playlist:hover .more-button {
+  opacity: 1 !important;
+}
+.clip.hoverable .preview, .playlist.hoverable .preview {
+  opacity: 1 !important;
+}
+.clip .preview, .playlist .preview {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.clip .time-status, .playlist .time-status {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 4px;
+  color: #ffffff;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 11px;
+  display: inline-block;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+.clip .watch-later-button, .playlist .watch-later-button {
+  transition: opacity 0.5s;
+  border-radius: 2px;
+  opacity: 0;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  background-color: black;
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 4px;
+  padding: 2px;
+}
+.clip .watch-later-button svg, .playlist .watch-later-button svg {
+  fill: white;
+}
+.clip .content-container, .playlist .content-container {
+  font-family: Roboto;
+  padding-top: 10px;
+  padding-right: 24px;
+  position: relative;
+}
+.clip .content-container h3, .playlist .content-container h3 {
+  display: -webkit-box;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 8px;
+  color: #0a0a0a;
+}
+.clip .content-container footer .channel-name, .playlist .content-container footer .channel-name {
+  margin: 0;
+  font-size: 12px;
+  font-family: Roboto;
+  color: #606060;
+  display: block;
+  width: 100%;
+}
+.clip .content-container footer .channel-name:hover, .playlist .content-container footer .channel-name:hover {
+  color: rgba(18, 18, 18, 0.8);
+}
+.clip .content-container footer .meta p, .playlist .content-container footer .meta p {
+  font-size: 12px;
+  display: inline-block;
+  margin: 0;
+  color: #606060;
+}
+.clip .content-container footer .meta p:first-child:after, .playlist .content-container footer .meta p:first-child:after {
+  display: inline-block;
+  content: "•";
+  margin: 0 4px;
+}
+.clip .content-container .more-button, .playlist .content-container .more-button {
+  opacity: 0;
+  width: 23px;
+  height: 23px;
+  border: 0;
+  padding: 0;
+  position: absolute;
+  top: 8px;
+  right: 0;
+  cursor: pointer;
+}
+.clip .content-container .more-button svg, .playlist .content-container .more-button svg {
+  fill: #909090;
+}
+.clip .content-container .more-button:hover svg, .playlist .content-container .more-button:hover svg {
+  fill: #606060;
+}
+
+.playlist .view-fill-playlist {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  color: #606060;
+}
+.playlist .view-fill-playlist:hover {
+  color: #0a0a0a;
+}
+.playlist:hover .overlay-playlist {
+  opacity: 1;
+}
+.playlist .overlay-playlist {
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(17, 17, 17, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.playlist .overlay-side-panel {
+  width: 92px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(17, 17, 17, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.playlist .overlay-side-panel .playlist-count {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  margin: 0 0 4px;
+}
+.playlist .overlay-side-panel .playlist-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+.playlist .overlay-side-panel .playlist-icon svg {
+  fill: rgba(255, 255, 255, 0.8);
+}
+.playlist .playall-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.playlist .playall-icon {
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+}
+.playlist .playall-icon svg {
+  fill: rgba(255, 255, 255, 0.8);
 }
